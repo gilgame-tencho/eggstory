@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cq0vlwu7bv8jl"]
+
+[ext_resource type="Texture2D" uid="uid://bm6vd4yqlr5e1" path="res://img/chara/egg01-2.png" id="1_6g275"]
+[ext_resource type="Script" path="res://Scenes/petbot.gd" id="1_66i7x"]
+[ext_resource type="Texture2D" uid="uid://bjd34k1aam3uw" path="res://img/chara/egg01.png" id="2_ud7du"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sdesf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6g275")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ud7du")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_72dd3"]
+radius = 34.0
+height = 90.0
+
+[node name="Petbot" type="CharacterBody2D"]
+script = ExtResource("1_66i7x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_sdesf")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 12)
+shape = SubResource("CapsuleShape2D_72dd3")

@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3tqiy6ebv1b6"]
+
+[ext_resource type="PackedScene" uid="uid://4geenihuyuel" path="res://Scenes/background.tscn" id="1_1tf40"]
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_xbtmu"]
+[ext_resource type="LabelSettings" uid="uid://c8rgu6i2lx8nc" path="res://LabelSettings/menu_label.tres" id="2_ipc88"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fisxx"]
+font_size = 60
+font_color = Color(0.370364, 0.370364, 0.370364, 1)
+outline_size = 6
+outline_color = Color(1, 0.0156863, 0.435294, 1)
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_xbtmu")
+
+[node name="Background" parent="." instance=ExtResource("1_1tf40")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer2"]
+layout_mode = 2
+text = "
+Game Title!!"
+label_settings = SubResource("LabelSettings_fisxx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.5
+offset_top = -20.0
+offset_right = 62.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Game Start"
+label_settings = ExtResource("2_ipc88")
+
+[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Setting"
+label_settings = ExtResource("2_ipc88")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+label_settings = ExtResource("2_ipc88")
+horizontal_alignment = 1
+vertical_alignment = 1

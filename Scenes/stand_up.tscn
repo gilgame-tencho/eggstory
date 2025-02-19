@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://svsr5p8gqvxd"]
+
+[ext_resource type="Script" path="res://Scenes/stand_up.gd" id="1_4hsoi"]
+[ext_resource type="LabelSettings" uid="uid://bv86wtit7r0um" path="res://LabelSettings/title1_label_settings.tres" id="1_no4wc"]
+[ext_resource type="Texture2D" uid="uid://uilta418k5n3" path="res://img/black.png" id="3_7dja2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cojdh"]
+font_size = 22
+font_color = Color(0.646029, 0.646029, 0.646029, 1)
+
+[node name="Stand up" type="Node2D"]
+script = ExtResource("1_4hsoi")
+metadata/_edit_group_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -49.0
+offset_right = 136.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "TTIW Project"
+label_settings = ExtResource("1_no4wc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Tateiwa degine"
+label_settings = SubResource("LabelSettings_cojdh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("3_7dja2")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1024, 618)
